@@ -12,11 +12,9 @@ exports.config = {
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-    logging: true,
     entities: ['dist/**/*.entity{.ts,.js}'],
     migrations: ['dist/migrations/*{.ts,.js}'],
-    synchronize: true,
-    dropSchema: true,
+    synchronize: false,
 };
 exports.default = (0, config_1.registerAs)('typeorm', () => exports.config);
 exports.connectionSourse = new typeorm_1.DataSource(exports.config);

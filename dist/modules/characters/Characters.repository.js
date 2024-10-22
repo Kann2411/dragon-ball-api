@@ -45,9 +45,7 @@ let CharactersRepository = class CharactersRepository {
                 });
                 const savedCharacters = await this.characterDBRepository.save(newCharacter);
                 for (const transformation of element.transformations) {
-                    const transformationImageFileName = transformation.image
-                        .split('/')
-                        .pop();
+                    const transformationImageFileName = `/assets/transformations/${transformation.image.split('/').pop()}`;
                     const newTransformation = this.transformationRepository.create({
                         name: transformation.name,
                         image: transformationImageFileName,

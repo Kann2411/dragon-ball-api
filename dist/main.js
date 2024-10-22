@@ -16,7 +16,7 @@ async function bootstrap() {
     const document = swagger_1.SwaggerModule.createDocument(app, swaggerConfig);
     swagger_1.SwaggerModule.setup('api', app, document);
     app.enableCors();
-    app.useStaticAssets((0, path_1.join)(__dirname, '..', 'assets'), {
+    app.useStaticAssets((0, path_1.join)(__dirname, 'assets'), {
         prefix: 'assets',
     });
     app.use(new logger_1.LoggerMiddleware().use);
