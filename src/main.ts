@@ -21,7 +21,7 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
   app.enableCors();
 
-  app.useStaticAssets(join(__dirname, '..', 'assets'), {
+  app.useStaticAssets(join(__dirname, 'assets'), {
     prefix: 'assets',
   });
   app.use(new LoggerMiddleware().use);
