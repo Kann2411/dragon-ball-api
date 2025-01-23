@@ -5,7 +5,6 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { PlanetEntity } from './Planets.entity';
 import { TransformationEntity } from './Transformations.entity';
 
 @Entity({ name: 'characters' })
@@ -36,9 +35,6 @@ export class CharacterEntity {
 
   @Column('varchar')
   affiliation: string;
-
-  @ManyToOne(() => PlanetEntity, (planet) => planet.characters)
-  originPlanet: PlanetEntity;
 
   @OneToMany(
     () => TransformationEntity,
