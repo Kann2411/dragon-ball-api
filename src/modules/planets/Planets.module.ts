@@ -12,9 +12,4 @@ import { PlanetEntity } from 'src/entities/Planets.entity';
 })
 export class PlanetsModule {
   constructor(private readonly planetRepository: PlanetsRepository) {}
-
-  async onModuleInit() {
-    console.log('preloading planets');
-    await this.planetRepository.seedPlanets();
-  }
 }
