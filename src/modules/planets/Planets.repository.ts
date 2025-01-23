@@ -12,6 +12,11 @@ export class PlanetsRepository {
   ) {}
 
   async seedPlanets() {
+    if((await this.planetDBRepository.find()).length > 0) {
+      return {
+        message: 'Ya existen planetas en la base de datos',
+      };
+    }
     characters.map(async (element) => {
       await this.planetDBRepository
         .createQueryBuilder()

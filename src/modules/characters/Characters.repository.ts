@@ -18,6 +18,11 @@ export class CharactersRepository {
   ) {}
 
   async seederCharacters() {
+    if((await this.characterDBRepository.find()).length > 0) {
+      return {
+        message: 'Ya existen personajes en la base de datos',
+      };
+    }
     const planets = await this.planetRepository.find();
 
     for (const element of characters) {
